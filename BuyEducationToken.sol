@@ -100,7 +100,7 @@ contract BuyEducationToken is EducationToken{
     // token price = 0.01 EThers
     
     uint256 tokenPrice = 10000000000000000; // 0.01 Ethers
-    uint256 public noOfTokens;
+    uint256 noOfTokens;
     
     function buyToken()public payable returns(bool){
         // Buy min 1 token or max 500 tokens at a time 
