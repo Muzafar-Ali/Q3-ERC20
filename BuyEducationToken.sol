@@ -95,16 +95,13 @@ contract EducationToken is IERC20{
 //3. There should be an additional method to adjust the price that allows the owner to adjust the price.
 
 contract BuyEducationToken is EducationToken{
-    // 1 ECT = 100 EThers
-    // token price = 1,000000000000000000 / 100,000000000000000000
-    // token price = 0.01 EThers
-    
+      
     uint256 tokenPrice = 10000000000000000; // 0.01 Ethers
     uint256 noOfTokens;
     
     function buyToken()public payable returns(bool){
         // Buy min 1 token or max 500 tokens at a time 
-        require(msg.value >= 10000000000000000 && msg.value <= 5000000000000000000,"Buy min 1 token max 500 at a time");
+        require(msg.value >= tokenPrice && msg.value <= 5000000000000000000,"Buy min 1 token max 500 at a time");
         require(msg.sender !=address(0),"ERRO buying tokens from addres Zero");
        
         noOfTokens = (msg.value / tokenPrice) *10**18;
